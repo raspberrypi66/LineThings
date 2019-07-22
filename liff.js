@@ -9,7 +9,7 @@ const PSDI_SERVICE_UUID         = 'E625601E-9E55-4597-A598-76018A0D293D'; // Dev
 const PSDI_CHARACTERISTIC_UUID  = '26E2B12B-85F0-4F3F-9FDD-91D114270E6E';
 
 // UI settings
-let ledState = true; // true: LED on, false: LED off
+let ledState = false; // true: LED on, false: LED off
 let clickCount = 0;
 
 // -------------- //
@@ -220,7 +220,7 @@ function liffGetUserService(service) {
         window.ledCharacteristic = characteristic;
 
         // Switch off by default
-        liffToggleDeviceLedState(false);
+        liffToggleDeviceLedState(true);
     }).catch(error => {
         uiStatusError(makeErrorMsg(error), false);
     });

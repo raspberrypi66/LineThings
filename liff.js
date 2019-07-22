@@ -9,7 +9,7 @@ const PSDI_SERVICE_UUID         = 'E625601E-9E55-4597-A598-76018A0D293D'; // Dev
 const PSDI_CHARACTERISTIC_UUID  = '26E2B12B-85F0-4F3F-9FDD-91D114270E6E';
 
 // UI settings
-let ledState = false; // true: LED on, false: LED off
+let ledState = true; // true: LED on, false: LED off
 let clickCount = 0;
 
 // -------------- //
@@ -165,7 +165,7 @@ function liffRequestDevice() {
 
 function liffConnectToDevice(device) {
     device.gatt.connect().then(() => {
-        liffToggleDeviceLedState(false);
+        
         document.getElementById("device-name").innerText = device.name;
         document.getElementById("device-id").innerText = device.id;
 

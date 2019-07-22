@@ -182,7 +182,7 @@ function liffConnectToDevice(device) {
         }).catch(error => {
             uiStatusError(makeErrorMsg(error), false);
         });
-        
+        /*
         liff.sendMessages([{
           type:'text',
           text:'Hello, World!'
@@ -191,7 +191,7 @@ function liffConnectToDevice(device) {
          }).catch((err) => {
            console.log('error', err);
          });
-
+        */
         // Device disconnect callback
         const disconnectCallback = () => {
             // Show status disconnected

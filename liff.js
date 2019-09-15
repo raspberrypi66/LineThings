@@ -18,7 +18,31 @@ let clickCount = 0;
 
 window.onload = () => {
     initializeApp();
+    client = new Paho.MQTT.Client("inbinahead.ddns.net", 8080, "sasdfsdfsdfsdf");
+    // Set callback handlers
+    client.onConnectionLost = onConnectionLost;
+    client.onMessageArrived = onMessageArrived;
+
+    // Connect the client, if successful, call onConnect function
+    client.connect({ 
+        onSuccess: onConnect,
+    });
 };
+
+function onConnect() {
+    
+    client.publish("test/","test value");
+}
+
+// Called when the client loses its connection
+function onConnectionLost(responseObject) {
+ 
+}
+
+// Called when a message arrives
+function onMessageArrived(message) {
+    
+}
 
 // ----------------- //
 // Handler functions //

@@ -17,7 +17,7 @@ let clickCount = 0;
 // -------------- //
 
 window.onload = () => {
-    initializeApp();
+    //initializeApp();
     client = new Paho.MQTT.Client("inbinahead.ddns.net", 8080, "sasdfsdfsdfsdf");
     // Set callback handlers
     client.onConnectionLost = onConnectionLost;
